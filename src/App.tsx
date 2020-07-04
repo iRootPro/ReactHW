@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import {Message} from "./components/Message/Message";
-import OnOff from "./components/OnOff/OnOff";
 import Task from "./components/Task/Task";
 
 function App() {
