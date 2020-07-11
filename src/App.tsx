@@ -38,7 +38,7 @@ function App() {
             <Message author={'Sasha'} message={'Hi,fine'} time={'20:01'}/>
             <Message author={'Petr'} message={'Hello, friends'} time={'20:02'}/>
             <Task/>
-            <div><h2>Add new Message</h2></div>
+            <div><h2>Add new user</h2></div>
 
             <HelloName addUser={addUser} getCountUsers={getCountUsers}/>
         </div>
