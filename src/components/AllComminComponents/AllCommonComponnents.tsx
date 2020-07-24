@@ -1,9 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import {Input} from "../common/Input/Input";
 import {Button} from "../common/Button/Button";
 import {CheckBox} from "../common/CheckBox/CheckBox";
 
+
 function AllCommonComponents() {
+    const [value, setValue] = useState<string>('')
+
+    const onChangeInputHandler = (newValue: string) => {
+        setValue(newValue)
+    }
+
+
+    const [check, setCheck] = useState<boolean>(false)
+    const onChangeCheckBoxHandler = (newValue: boolean) => {
+        setCheck(!check)
+    }
+
     return (
         <div>
             <div>My common components:</div>
@@ -14,14 +27,20 @@ function AllCommonComponents() {
                     label={'Username'}
                     message={'Username is required'}
                     class={'green-input'}
+                    onChange={onChangeInputHandler}
+                    value={value}
                 />
                 <Input
                     label={'Password'}
                     message={'Password is required'}
                     class={'red-input'}
+                    onChange={onChangeInputHandler}
+                    value={value}
                 />
                 <Input
                     class={'standard-input'}
+                    onChange={onChangeInputHandler}
+                    value={value}
                 />
             </div>
             <br/>
@@ -37,9 +56,9 @@ function AllCommonComponents() {
             <div>CheckBoxes</div>
 
             <div>
-                <CheckBox checked={true} class={'small-checkbox'}/>
-                <CheckBox checked={false} class={'middle-checkbox'}/>
-                <CheckBox checked={true} class={'big-checkbox'}/>
+                <CheckBox checked={check} class={'small-checkbox'} onChange={onChangeCheckBoxHandler}/>
+                <CheckBox checked={check} class={'middle-checkbox'} onChange={onChangeCheckBoxHandler}/>
+                <CheckBox checked={check} class={'big-checkbox'} onChange={onChangeCheckBoxHandler} />
             </div>
 
         </div>

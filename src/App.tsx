@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './App.css';
 import {v1} from "uuid";
 import {HashRouter, NavLink, Route} from "react-router-dom";
-import {NavBar} from "./components/NavBar/NavBar";
 import {PreJunior} from "./components/PreJunior/PreJunior";
 import {Header} from "./components/Header/Header";
 import {Junior} from "./components/Junior/Junior";

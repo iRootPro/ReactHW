@@ -1,0 +1,29 @@
+.green-input {
+    color: #333;
+    float: left;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0 20px 10px;
+    width: 200px;
+    border-radius: 4px;
+    border-color: green;
+    background-color: #A8DDFD;
+}
+
+.red-input {
+    color: #333;
+    float: left;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0 20px 10px;
+    width: 200px;
+    border-radius: 4px;
+    border-color: green;
+    background-color: indianred;
+}
+
+.standard-input {
+    font-size: 30px;
+}

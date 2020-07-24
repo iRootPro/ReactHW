@@ -1,4 +1,5 @@
 import React from "react";
+import classes from './Button.module.css'
 
 type PropsType = {
     name: string
@@ -8,6 +9,6 @@ type PropsType = {
 
 export function Button(props: PropsType) {
     return (
-            <button className={props.class} onClick={props.callBackHandler}>{props.name}</button>
+            <button className={classes[props.class]} onClick={props.callBackHandler}>{props.name}</button>
     )
 }

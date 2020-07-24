@@ -1,0 +1,15 @@
+.standard-btn {
+
+}
+
+.green-btn {
+    background-color: green;
+    border-radius: 5px;
+    font-size: 30px;
+}
+
+.red-btn {
+    background-color: red;
+    border-radius: 5px;
+    font-size: 30px;
+}

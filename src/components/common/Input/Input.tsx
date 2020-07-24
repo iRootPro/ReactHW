@@ -6,13 +6,15 @@ type PropsType = {
     label?: string
     message?: string
     error?: string
+    onChange: (value: string) => void
+    value: string
 }
 
 export function Input(props: PropsType) {
     return (
-        <div className={props.error ? 'red-input' :props.class}>
+        <div className={props.error ? classes['red-input'] : classes[props.class]}>
             <label>{props.label}</label>
-            <input type="text"/>
+            <input type="text" value={props.value} onChange={e => props.onChange(e.currentTarget.value)} />
             <div>{props.message}</div>
         </div>
     )
