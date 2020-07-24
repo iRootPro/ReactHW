@@ -4,6 +4,7 @@ import {Message} from "./components/Message/Message";
 import Task from "./components/Task/Task";
 import {HelloName} from "./components/HelloName/HelloName";
 import {v1} from "uuid";
+import AllCommonComponents from "./components/AllComminComponents/AllCommonComponnents";
 
 
 
@@ -39,8 +40,8 @@ function App() {
             <Message author={'Petr'} message={'Hello, friends'} time={'20:02'}/>
             <Task/>
             <div><h2>Add new user</h2></div>
-
             <HelloName addUser={addUser} getCountUsers={getCountUsers}/>
+            <AllCommonComponents/>
         </div>
 
     );

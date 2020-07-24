@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Button} from "../common/Button/Button";
 
 type TaskType = {
     id: number
@@ -47,6 +48,11 @@ function Task() {
         setFilter(p)
     }
 
+    const lowButtonHandler = () => priority('low')
+    const middleButtonHandler = () => priority('middle')
+    const highButtonHandler = () => priority('high')
+    const allButtonHandler = () => priority('all')
+
 
     return (
         <div>
@@ -54,13 +60,14 @@ function Task() {
             <ul>
                 {taskForList.map(task =>
                     <li key={task.id}>{task.n} : {task.p}
-                        <button onClick={() => removedTaskById(task.id)}>X</button>
+                        <Button class={"standard-btn"} name={'X'} callBackHandler={() => removedTaskById(task.id)}/>
                     </li>)}
             </ul>
-            <button onClick={() => priority('low')}>Low</button>
-            <button onClick={() => priority('middle')}>Middle</button>
-            <button onClick={() => priority('high')}>High</button>
-            <button onClick={() => priority('all')}>All</button>
+            <Button name={'Low'} class={"standard-btn"} callBackHandler={lowButtonHandler}/>
+            <Button name={'Middle'} class={"standard-btn"} callBackHandler={middleButtonHandler}/>
+            <Button name={'High'} class={"standard-btn"} callBackHandler={highButtonHandler}/>
+            <Button name={'All'} class={"standard-btn"} callBackHandler={allButtonHandler}/>
+
         </div>
     )
 }

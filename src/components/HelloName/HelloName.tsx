@@ -1,4 +1,5 @@
 import React, {ChangeEvent, useState} from "react";
+import {Button} from "../common/Button/Button";
 
 type PropsType = {
     addUser: (newUser: string) => void
@@ -26,7 +27,7 @@ export const HelloName = (props: PropsType) => {
     return (
         <div>
             <input type="text" value={inputName} onChange={onChangeInputName}/>
-            <button onClick={() => addClickHandler(inputName)}>Hello</button>
+            <Button name={'Hello'} callBackHandler={() => addClickHandler(inputName)} class={"standard-btn"}/>
             <div><span> Количество пользователей:
                 { props.getCountUsers() }
             </span></div>
