@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import {EditableSpan} from "../EditableSpan/EditableSpan";
 import {Select} from "../common/Select/Select";
 import {Radio} from "../common/Radio/Radio";
+import {Button} from '../common/Button/Button'
+import {hwReducer} from "../../homeWorkReducer";
 
 
 export function Junior() {
@@ -9,6 +11,15 @@ export function Junior() {
     let [valueSpan, setValueSpan] = useState('Default value')
     let [valueSelect, setValueSelect] = useState('one')
     let [valueRadio, setValueRadio] = useState('one')
+    let [people, setPeople] = useState<Array<{ id: string, name: string, age: number }>> (
+        [
+            {id: '1', name: 'Alex', age: 18},
+            {id: '2', name: 'Sasha', age: 9},
+            {id: '3', name: 'Anastasiya', age: 35},
+            {id: '4', name: 'Ivan', age: 15},
+            {id: '5', name: 'Lena', age: 18},
+        ]
+    )
 
     const onChangeEditableHandler = (value: string) => {
         setValueSpan(value)
@@ -29,6 +40,19 @@ export function Junior() {
     const onChangeRadioHandler = (value: string) => {
         setValueRadio(value)
     }
+
+    const upButtonHandler = () => {
+        setPeople(hwReducer(people, {type: 'SORT', payload: 'up'}))
+    }
+    const downButtonHandler = () => {
+        setPeople(hwReducer(people, {type: 'SORT', payload: 'down'}))
+    }
+    const checkButtonHandler = () => {
+        setPeople(hwReducer(people, {type: 'CHECK', payload: '18'}))
+    }
+
+
+
     return (
         <div><h1>Junior Page</h1>
             <div><h3>Editable component</h3></div>
@@ -56,6 +80,15 @@ export function Junior() {
                         value={valueRadio}
                         name={'test'}/>
                 </div>
+            </div>
+            <div><h3>hwReducer</h3></div>
+            <div>
+                { people.map(man => <div key={man.id}>id: {man.id}, name: {man.name}, age: {man.age}</div>) }
+            </div>
+            <div style={{ padding: '10px'}}>
+                <Button class={"standard-btn"} name={'UP'} callBackHandler={upButtonHandler}/>
+                <Button class={"standard-btn"} name={'DOWN'} callBackHandler={downButtonHandler}/>
+                <Button class={"standard-btn"} name={'18'} callBackHandler={checkButtonHandler}/>
             </div>
         </div>
     )
