@@ -1,23 +1,7 @@
 import React, {useState} from 'react'
 import {Button} from "../common/Button/Button";
 
-type TaskType = {
-    id: number
-    n: string
-    p: 'hight' | 'low' | 'middle' | 'all'
-}
-
 type FilteredType = 'all' | 'low' | 'middle' | 'high'
-
-const tasks: Array<TaskType> =
-    [
-        {id: 1, n: "работа", p: "hight"},
-        {id: 2, n: "аниме", p: "low"},
-        {id: 3, n: "игры", p: "middle"},
-        {id: 4, n: "реакт", p: "hight"},
-        {id: 5, n: "хтмл", p: "low"}
-    ]
-
 
 function Task() {
 

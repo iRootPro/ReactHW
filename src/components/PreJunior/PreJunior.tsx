@@ -1,7 +1,6 @@
 import React from "react";
 import {Message} from "../Message/Message";
 import Task from "../Task/Task";
-import {HelloName} from "../HelloName/HelloName";
 import AllCommonComponents from "../AllComminComponents/AllCommonComponnents";
 
 export function PreJunior() {
@@ -13,7 +12,6 @@ export function PreJunior() {
             <Message author={'Petr'} message={'Hello, friends'} time={'20:02'}/>
             <Task/>
             <div><h2>Add new user</h2></div>
-            {/*<HelloName addUser={addUser} getCountUsers={getCountUsers}/>*/}
             <AllCommonComponents/>
         </div>
     )

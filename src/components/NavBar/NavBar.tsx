@@ -1,6 +1,5 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import HomeIcon from '@material-ui/icons/Home';
 import ChevronRightTwoToneIcon from '@material-ui/icons/ChevronRightTwoTone';
 import {ListItemIcon} from "@material-ui/core";
 import ListItem from "@material-ui/core/ListItem";
