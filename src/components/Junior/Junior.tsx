@@ -51,8 +51,6 @@ export function Junior() {
         setPeople(hwReducer(people, {type: 'CHECK', payload: '18'}))
     }
 
-
-
     return (
         <div><h1>Junior Page</h1>
             <div><h3>Editable component</h3></div>

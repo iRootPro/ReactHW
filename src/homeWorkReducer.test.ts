@@ -1,6 +1,12 @@
-import {hwReducer} from "./homeWorkReducer";
+import {
+    checkDownActionCreator,
+    hwReducer,
+    sortDownActionCreator,
+    sortUpActionCreator,
+    StateType
+} from "./homeWorkReducer";
 
-let peoples: Array<{ id: string, name: string, age: number }>
+let peoples: Array<StateType>
 
 beforeAll(() => {
     peoples = [
@@ -19,7 +25,7 @@ test('Should be defined reducer hwReducer', () => {
 test('Should be returned sorted array of name', () => {
 
 
-    const result: Array<{ id: string, name: string, age: number }> = [
+    const result: Array<StateType> = [
         {id: '1', name: 'Alex', age: 18},
         {id: '3', name: 'Anastasiya', age: 35},
         {id: '4', name: 'Ivan', age: 15},
@@ -27,28 +33,28 @@ test('Should be returned sorted array of name', () => {
         {id: '2', name: 'Sasha', age: 9},
     ]
 
-    const resultFromReducer = hwReducer(peoples, {type: 'SORT', payload: 'up'})
+    const resultFromReducer = hwReducer(peoples, sortUpActionCreator())
     expect(resultFromReducer).toEqual(result)
 })
 
 test('Should be return array of objects descending by name', () => {
 
-    const result: Array<{ id: string, name: string, age: number }> = [
+    const result: Array<StateType> = [
         {id: '2', name: 'Sasha', age: 9},
         {id: '5', name: 'Lena', age: 18},
         {id: '4', name: 'Ivan', age: 15},
         {id: '3', name: 'Anastasiya', age: 35},
         {id: '1', name: 'Alex', age: 18},
     ]
-    const resultFromReducer = hwReducer(peoples, {type: 'SORT', payload: 'down'})
+    const resultFromReducer = hwReducer(peoples, sortDownActionCreator())
     expect(resultFromReducer).toEqual(result)
 })
 
 test('Should be return array of peoples with age = 18', () => {
-    const result = [
+    const result: Array<StateType> = [
         {id: '5', name: 'Lena', age: 18},
         {id: '1', name: 'Alex', age: 18},
     ]
-    const resultFromReducer = hwReducer(peoples, {type: 'CHECK', payload: 18})
+    const resultFromReducer = hwReducer(peoples, checkDownActionCreator())
     expect(resultFromReducer).toEqual(result)
 })
