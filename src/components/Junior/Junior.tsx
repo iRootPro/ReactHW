@@ -4,7 +4,8 @@ import {Select} from "../common/Select/Select";
 import {Radio} from "../common/Radio/Radio";
 import {Button} from '../common/Button/Button'
 import {hwReducer} from "../../homeWorkReducer";
-
+import {Time} from "../Time/Time"
+import moment from "moment/moment";
 
 export function Junior() {
 
@@ -88,6 +89,7 @@ export function Junior() {
                 <Button class={"standard-btn"} name={'DOWN'} callBackHandler={downButtonHandler}/>
                 <Button class={"standard-btn"} name={'18'} callBackHandler={checkButtonHandler}/>
             </div>
+           <Time/>
         </div>
     )
 }
