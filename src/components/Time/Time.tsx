@@ -32,7 +32,6 @@ export function Time() {
         display: showBlock ? 'inline' : 'none',
         width: '300px',
         height: '50px',
-        // textAlign: 'center',
         padding: '15px',
         border: '1px solid #ccc',
         borderRadius: '10px',
