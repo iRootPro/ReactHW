@@ -13,7 +13,6 @@ export function Time() {
         clearInterval(timerId)
         const id = window.setInterval(() => setTime(moment().format('LTS')), 1000)
         setDate(moment().format('LL'))
-        console.log(id)
         setTimerId(id)
     }
 
