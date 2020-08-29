@@ -11,7 +11,6 @@ function App() {
 
     return (
         <div className="App">
-
             <HashRouter>
                 <Header/>
                 <Route path={'/preJunior'} component={PreJunior}/>

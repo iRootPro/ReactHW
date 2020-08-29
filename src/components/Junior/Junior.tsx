@@ -5,7 +5,10 @@ import {Radio} from "../common/Radio/Radio";
 import {Button} from '../common/Button/Button'
 import {hwReducer} from "../../homeWorkReducer";
 import {Time} from "../Time/Time"
-import moment from "moment/moment";
+import Preloader from "../common/Preloader/Preloader";
+import {useDispatch, useSelector} from "react-redux";
+import {AppRootStateType} from "../../state/store";
+import {changeStatusLoadingAC, loaderStateType} from "../../redux/preloader-reducer";
 
 export function Junior() {
 
@@ -52,6 +55,16 @@ export function Junior() {
         setPeople(hwReducer(people, {type: 'CHECK', payload: '18'}))
     }
 
+    const loading = useSelector<AppRootStateType, loaderStateType>(state => state.loading)
+    let dispatch = useDispatch()
+
+    const loadingButtonHandler = () => {
+        dispatch(changeStatusLoadingAC(true))
+        setTimeout(() => {
+            dispatch(changeStatusLoadingAC(false))
+        }, 3000)
+    }
+
     return (
         <div><h1>Junior Page</h1>
             <div><h3>Editable component</h3></div>
@@ -90,6 +103,13 @@ export function Junior() {
                 <Button class={"standard-btn"} name={'18'} callBackHandler={checkButtonHandler}/>
             </div>
            <Time/>
+            <div>
+                <h2>Preloader</h2>
+                <div>
+                    <div> { loading.loading ? <Preloader/> : null } </div>
+                    <button onClick={loadingButtonHandler}>Loading</button>
+                </div>
+            </div>
         </div>
     )
 }
