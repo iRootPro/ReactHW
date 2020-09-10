@@ -8,7 +8,7 @@ type PropsType = {
 }
 
 
-export const Select = (props: PropsType) => {
+export const Select = React.memo((props: PropsType) => {
     const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
         if (e.currentTarget.value) {
             props.onChange(e.currentTarget.value)
@@ -26,4 +26,4 @@ export const Select = (props: PropsType) => {
             }
         </select>
     )
-}
+})

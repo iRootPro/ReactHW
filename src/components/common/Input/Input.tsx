@@ -12,7 +12,7 @@ type PropsType = {
     onBlur?: () => void
 }
 
-export function Input(props: PropsType) {
+export const Input = React.memo((props: PropsType) => {
     return (
         <div className={props.error ? classes['red-input'] : classes[props.class]}>
             <label>{props.label}</label>
@@ -26,4 +26,4 @@ export function Input(props: PropsType) {
             <div>{props.message}</div>
         </div>
     )
-}
+})

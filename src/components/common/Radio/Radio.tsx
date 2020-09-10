@@ -8,7 +8,7 @@ type PropsType = {
 }
 
 
-export const Radio = (props: PropsType) => {
+export const Radio = React.memo((props: PropsType) => {
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         props.onChange(e.currentTarget.value)
     }
@@ -30,4 +30,4 @@ export const Radio = (props: PropsType) => {
             }
         </>
     )
-}
+})

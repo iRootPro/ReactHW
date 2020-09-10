@@ -10,7 +10,7 @@ type PropsType = {
 
 
 
-export function CheckBox(props: PropsType) {
+export const CheckBox = React.memo((props: PropsType) => {
     return (
         <div>
             <input type="checkbox"
@@ -19,6 +19,5 @@ export function CheckBox(props: PropsType) {
                    onChange={e => props.onChange(e.currentTarget.checked)}
             />
         </div>
-
     )
-}
+})

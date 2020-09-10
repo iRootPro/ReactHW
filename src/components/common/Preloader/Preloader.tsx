@@ -1,10 +1,10 @@
 import React from "react";
 import preloader from "./../../../assets/img/preloader.svg"
 
-const Preloader = () => {
+const Preloader = React.memo(() => {
     return (
         <img src={preloader} alt="preloader"/>
     )
-}
+})
 
 export default Preloader
