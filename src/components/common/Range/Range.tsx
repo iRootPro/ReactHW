@@ -14,7 +14,7 @@ export const Range = React.memo((props: PropsRangeType) => {
         props.onChange(+e.currentTarget.value)
     }, [props])
     return (
-        <div>
+        <div className={classes.container}>
                 <div> <input className={classes.input} type={"range"} min={props.minValue} max={props.maxValue} value={props.value} onChange={callBackRangeChange}/></div>
                 <div><span>{props.value}</span></div>
         </div>
