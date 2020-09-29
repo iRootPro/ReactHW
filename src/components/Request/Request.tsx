@@ -13,9 +13,9 @@ export const Request = React.memo(() => {
 
     const onClickHandler = useCallback(() => {
         requestApi.postRequest(isChecked)
-            .then(res => setResponse(JSON.stringify(res)))
-            .catch(e => setResponse(JSON.stringify(e)))
-    }, [])
+            .then(res => setResponse(JSON.stringify(res.data.info)))
+            .catch(e => setResponse(JSON.stringify(e.message)))
+    }, [isChecked])
 
     return (
         <div>
